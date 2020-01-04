@@ -1,0 +1,15 @@
+version: '3'
+services: 
+    web:
+        image: first_docker_app
+        build: .
+        command: "node src/index.js"
+        ports:
+            - "5000:3000"
+        depends_on: 
+            - "mongo"
+    mongo:
+        image: mongo
+        ports: 
+            - "27017:27017"
+        
